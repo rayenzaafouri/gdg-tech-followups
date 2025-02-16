@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+    <title>GDG On campus ESPRIT</title>
+    <style>
+        html {
+            font-size: 16px;
+            background-color: #dcdde1;
+            font-weight: 100;
+        }
+
+        body {
+            font-family: Roboto;
+            margin: 0;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p {
+            font-weight: 100;
+        }
+
+        nav {
+            display: grid;
+            grid-template-columns: auto 10rem auto;
+            gap: 1rem;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.5rem;
+            padding: .5rem;
+        }
+
+        nav img {
+            width: 100%;
+            display: block;
+        }
+
+        article {
+            background-color: white;
+            border-top-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+            min-height: 100lvh;
+            padding: .5rem
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:visited {
+            all: unset;
+        }
+
+        .title {
+            font-weight: 100;
+            margin: 0;
+            margin-top: unset;
+        }
+
+        article img{
+            display: block;
+            margin: 0 auto;
+        }
+
+
+        article .tags span {
+            font-size: .6rem;
+            border-radius: 16px;
+            padding: 5px;
+        }
+
+        article .tags span:first-of-type {
+            background-color: #0097e6;
+        }
+
+        article .tags span:nth-of-type(2) {
+            background-color: #44bd32;
+        }
+
+        .article-header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: .5rem;
+        }
+
+
+        code {
+            background: black;
+            border-radius: 1rem;
+            padding: .3rem;
+            color: white;
+            font-family: monospace;
+        }
+        ul{
+            list-style-type: disc;
+        }
+
+        a {
+            text-decoration: none;
+            color: #1a73e8; /* Google Blue */
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+
+        a:hover {
+            color: #185abc; /* Darker blue on hover */
+            border-bottom: 2px solid #185abc;
+        }
+        iframe {
+            margin: 0 auto;
+            display:     flex;
+            border-radius:1rem ;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <nav>
+        <a href="">Previous</a>
+        <img src="/assets/On Campus - ESPRIT.png">
+        <a href="">Next</a></li>
+    </nav>
+
+    <article>
+        <div class="article-header">
+            <h2 class="title">ESPRIT Covoiturage - Initial setup</h2>
+            <div class="tags">
+                <span>Session 1</span>
+                <span>8/2/2025</span>
+            </div>
+        </div>
+    
+        <p>
+            <h3>Downloads :</h3>
+            <ul>
+                <li> <a href="https://nodejs.org/en/download">Node.js v22.14.0 LTS</a></li>
+                <li> <a href="https://www.docker.com/products/docker-desktop/">Docker Desktop</a></li>
+                <li><a href="https://www.mongodb.com/products/tools/compass">MongoDB Compass</a></li>
+                <li><a href="https://git-scm.com/downloads">git</a></li>
+            </ul>
+            <p>
+            We are going to use MongoDB for the main database and Redis for caching.<br>
+            You might also want to preload the databases on your system images for future use via these <b>docker commands.</b>
+            </p>
+            <br><br>
+            <code>
+                docker pull mongodb:latest
+            </code>
+            <br><br>
+            <code>
+                docker pull mongodb:latest
+            </code>
+            <br><br>
+
+            <p>After setting up the dependencies we need to tackle some <b>key concepts : </b></p>
+
+
+            <h2>What is a web service?</h2>
+
+            <img src="https://cdn.bap-software.net/2020/03/web-service-development.jpg" height="200"><br>
+            The most common web services we use on a daily basis are :
+            <ol>
+                <li><b>User Authentication Service :</b> Handles sign-ups, logins, and session management.</li>
+                <li><b>Payment Processing Service :</b> Manages transactions and payments securely.</li>
+                <li><b>Notification Service :   </b> Sends emails, SMS, or in-app notifications to users.</li>
+            </ol>
+
+            A service is like a unit that does one job really well and is ready when needed. In an app or website, it’s a small part that works on its own but helps the bigger system run smoothly.<br>
+            A service is often hosted in one or multiple servers.<br>
+            The same service can be reused across different platforms too like the Web, Android or iOS!
+        </p>
+
+
+        <h2>How can we use a service ?</h2>
+
+        <img src="https://miro.medium.com/v2/resize:fit:1184/1*TmLjr-kocv2lZ0SUSVnGIA.jpeg" height="200"><br>
+
+        <p>
+            To consume web services, we send <strong>requests</strong> through an <strong>API</strong> (Application Programming Interface) and receive <strong>responses</strong>. The request is like asking a question or providing instructions, and the API helps pass that request to the web service. The service then processes it and sends back a <strong>response</strong>, which contains the data or result we need. This interaction allows different systems or apps to communicate seamlessly and share information.
+        </p>
+
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/s7wmiS2mSXY?si=3Yracsv5leeSdXF7" title="YouTube video player" frameborder="0"       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+        <br>
+
+        Our goal for the next session will be creating our first REST API to handle essential tasks for the application such us registration signing in and so on....
+     </article>
+
+</body>
+
+</html>
