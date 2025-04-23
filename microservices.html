@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
     <link rel="icon" type="image/png" href="https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2.0,f_auto,g_center,h_32,q_auto:good,w_32/v1/gcs/platform-data-goog/contentbuilder/favicon_BWRrca0.png" sizes="32x32">
+
+
     
     <title>Initiation - GDG On campus ESPRIT</title>
     <style>
@@ -169,21 +171,69 @@
 
     <article>
         <div class="article-header">
-            <h2 class="title">GDG On campus - Followups</h2>
+            <h2 class="title">ESPRIT Covoiturage - Initial setup</h2>
+            <div class="tags">
+                <span>Session 1</span>
+                <span>8/2/2025</span>
+            </div>
         </div>
+    
+        <p>
+            <h3>Downloads :</h3>
+            <ul>
+                <li> <a href="https://nodejs.org/en/download">Node.js v22.14.0 LTS</a></li>
+                <li> <a href="https://www.docker.com/products/docker-desktop/">Docker Desktop</a></li>
+                <li><a href="https://www.mongodb.com/products/tools/compass">MongoDB Compass</a></li>
+                <li><a href="https://git-scm.com/downloads">git</a></li>
+            </ul>
+            <p>
+            We are going to use MongoDB for the main database and Redis for caching.<br>
+            You might also want to preload the databases on your system images for future use via these <b>docker commands.</b>
+            </p>
+            <br><br>
+            <code>
+                docker pull mongodb:latest
+            </code>
+            <br><br>
+            <code>
+                docker pull mongodb:latest
+            </code>
+            <br><br>
 
-        <p>This page will serve as a companion reference throughout the workshop series to support your understanding.</p>
+            <p>After setting up the dependencies we need to tackle some <b>key concepts : </b></p>
 
-        <ol> 
 
-            <li><a href="microservices.html">Introduction to microservices.</a></li>
-            <li><a href="javascript-warmup.html">Javascript Warmup.</a></li>
+            <h2>What is a web service?</h2>
 
-        </ol>
+            <img src="https://cdn.bap-software.net/2020/03/web-service-development.jpg" height="200"><br>
+            The most common web services we use on a daily basis are :
+            <ol>
+                <li><b>User Authentication Service :</b> Handles sign-ups, logins, and session management.</li>
+                <li><b>Payment Processing Service :</b> Manages transactions and payments securely.</li>
+                <li><b>Notification Service :   </b> Sends emails, SMS, or in-app notifications to users.</li>
+            </ol>
+
+            A service is like a unit that does one job really well and is ready when needed. In an app or website, it’s a small part that works on its own but helps the bigger system run smoothly.<br>
+            A service is often hosted in one or multiple servers.<br>
+            The same service can be reused across different platforms too like the Web, Android or iOS!
+        </p>
+
+
+        <h2>How can we use a service ?</h2>
+
+        <img src="https://miro.medium.com/v2/resize:fit:1184/1*TmLjr-kocv2lZ0SUSVnGIA.jpeg" height="200"><br>
+
+        <p>
+            To consume web services, we send <strong>requests</strong> through an <strong>API</strong> (Application Programming Interface) and receive <strong>responses</strong>. The request is like asking a question or providing instructions, and the API helps pass that request to the web service. The service then processes it and sends back a <strong>response</strong>, which contains the data or result we need. This interaction allows different systems or apps to communicate seamlessly and share information.
+        </p>
+
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/s7wmiS2mSXY?si=3Yracsv5leeSdXF7" title="YouTube video player" frameborder="0"       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
         <br>
 
+        Our goal for the next session will be creating our first REST API to handle essential tasks for the application such us registration signing in and so on....
      </article>
 
 </body>
